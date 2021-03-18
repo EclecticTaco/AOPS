@@ -20,28 +20,4 @@ const pyramidDescent = (pyramid, target) => {
     return finalPath
 }
 
-
-const pyramid1 = [
-    [1],
-    [2,3],
-    [4,1,1]
-] // 2
-
-const pyramid2 = [
-    [2],
-    [4,3],
-    [3,2,6],
-    [2,9,5,2],
-    [10,5,2,15,5]
-] // 720 
-
-const pyramidEdgeCase2 = [
-    [1]
-]
-
-/* console.log('expected path = [L, R] ' ,'out put path = ', pyramidDescent(pyramid1, 2))
-console.log('expected path = [L, R, L, L] ' ,'out put path = ', pyramidDescent(pyramid2, 720))
-console.log(test(pyramidDescent(pyramid1, 2), ['L', 'R']))
-console.log(test(pyramidDescent(pyramid2, 720), ['L', 'R', 'L', 'L'])) */
-
 module.exports = { pyramidDescent }
