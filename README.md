@@ -35,7 +35,7 @@ return the results array
 
 Since I knew I needed to visit every path, I implemented DFS using recursion. I also needed to backtrack when I went down an invalid path. To implement my recursive function, I broke down the problem into the smallest unit possible. 
 
-Since we can only go either left or right from any particular point in the pyramid, we only need the current value and what is left and right of it. I treated this unit as simply a tree. We also pass down the current directions traveresed, the sum, and which row we are currently at. 
+Since we can only go either left or right from any particular point in the pyramid, we only need the current value and what is left and right of it. I treated this unit as simply a binary tree. We also pass down the current directions traveresed, the sum, and which row we are currently at. 
 
 I also included some possible edge cases to test, such as a pyramid with a depth of one. Since there is no direction to take, I return an empty array.
 
