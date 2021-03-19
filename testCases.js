@@ -1,5 +1,4 @@
-const pyramid = require("./pyramid")
-
+const pyramid = require("./pyramid");
 const pyramid1 = [
     [1],
     [2,3],
@@ -14,10 +13,6 @@ const pyramid2 = [
     [10,5,2,15,5]
 ] // 720 
 
-const pyramidEdgeCase1 = [
-    [1]
-] // []
-
 const test = (output, expected) => {
     if (output.length !== expected.length) return false
     for (let i = 0; i < output.length; i += 1) {
@@ -29,15 +24,18 @@ const test = (output, expected) => {
 const cases = [
     [pyramid1, 2, ['L', 'R']],
     [pyramid2, 720, ['L', 'R', 'L', 'L']],
-    [pyramidEdgeCase1, 1, []],
 ]
 let pass = true
 let fail = []
 for (let i = 0; i < cases.length; i += 1) {
-    const pyramid = cases[i][0];
+    const aPyramid = cases[i][0];
     const target = cases[i][1]
     const expected = cases[i][2];
-    
+    const result = test(pyramid.pyramidDescent(aPyramid, target), expected)
+    if (!result) {
+        pass = false
+        fail.push(cases[i])
+    }
 }
 
 if (pass) {
@@ -45,6 +43,5 @@ if (pass) {
 } else {
     console.log('One more more test cases failed. Failed test cases: ', fail)
 }
-console.log(test(pyramid.pyramidDescent(pyramid1, 2), ['L', 'R']))
 
 
