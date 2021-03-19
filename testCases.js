@@ -49,17 +49,19 @@ for (let i = 0; i < cases.length; i += 1) {
     const aPyramid = cases[i][0];
     const target = cases[i][1]
     const expected = cases[i][2];
-    const result = test(pyramid.pyramidDescent(aPyramid, target), expected)
+    const output = pyramid.pyramidDescent(aPyramid, target)
+    const result = test(output, expected)
     if (!result) {
         pass = false
-        fail.push(cases[i])
+        fail.push(`output of ${aPyramid}: `, output, `expected result: ${expected} `)
     }
 }
 
 if (pass) {
     console.log('All test cases pass!')
 } else {
-    console.log('One more more test cases failed. Failed test cases: ', fail)
+    console.log('One more more test cases failed. Failed test cases: ')
+    console.log(JSON.stringify(fail))
 }
 
 
