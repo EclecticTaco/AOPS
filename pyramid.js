@@ -1,6 +1,6 @@
 const pyramidDescent = (pyramid, target) => {
     const lastRow = pyramid.length - 1;
-    let finalPath;
+    let finalPath = [];
     const descent = (path, sum, currentVal, rowCount, prevCol) => {
         sum *= currentVal;
         if (sum > target) return

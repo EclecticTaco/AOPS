@@ -13,6 +13,21 @@ const pyramid2 = [
     [10,5,2,15,5]
 ] // 720 
 
+const pyramid3 = [
+    [1],
+    [2,3]
+] // 2
+
+const pyramid4 = [
+    [1],
+] // 1
+
+const pyramid5 = [
+    [4],
+] // 4
+
+
+
 const test = (output, expected) => {
     if (output.length !== expected.length) return false
     for (let i = 0; i < output.length; i += 1) {
@@ -24,6 +39,9 @@ const test = (output, expected) => {
 const cases = [
     [pyramid1, 2, ['L', 'R']],
     [pyramid2, 720, ['L', 'R', 'L', 'L']],
+    [pyramid3, 2, ['L']],
+    [pyramid4, 1, []],
+    [pyramid5, 4, []]
 ]
 let pass = true
 let fail = []
